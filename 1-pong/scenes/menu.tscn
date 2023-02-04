@@ -1,0 +1,67 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpooroamnmg8p"]
+
+[ext_resource type="Theme" uid="uid://bcvk1v65ow7l1" path="res://themes/main.tres" id="1_ysntl"]
+[ext_resource type="Script" path="res://scenes/player_vs_player.gd" id="2_cnmnn"]
+[ext_resource type="Script" path="res://scenes/player_vs_cpu.gd" id="3_dralm"]
+[ext_resource type="Script" path="res://scenes/quit.gd" id="4_xuqb8"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+offset_right = 336.0
+offset_bottom = 200.0
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer"]
+offset_top = 33.0
+offset_right = 336.0
+offset_bottom = 166.0
+theme = ExtResource("1_ysntl")
+theme_override_font_sizes/font_size = 100
+text = "PONG"
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer"]
+offset_top = 204.0
+offset_right = 336.0
+offset_bottom = 317.0
+
+[node name="PlayerVsPlayer" type="Button" parent="VBoxContainer/Buttons"]
+offset_right = 336.0
+offset_bottom = 35.0
+theme = ExtResource("1_ysntl")
+theme_override_font_sizes/font_size = 20
+text = "Player-VS-Player"
+script = ExtResource("2_cnmnn")
+
+[node name="PlayerVsCpu" type="Button" parent="VBoxContainer/Buttons"]
+offset_top = 39.0
+offset_right = 336.0
+offset_bottom = 74.0
+theme = ExtResource("1_ysntl")
+theme_override_font_sizes/font_size = 20
+text = "Player-VS-CPU"
+script = ExtResource("3_dralm")
+
+[node name="Quit" type="Button" parent="VBoxContainer/Buttons"]
+offset_top = 78.0
+offset_right = 336.0
+offset_bottom = 113.0
+theme = ExtResource("1_ysntl")
+theme_override_font_sizes/font_size = 20
+text = "Quit"
+script = ExtResource("4_xuqb8")

@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://dt2iam768475g"]
+
+[ext_resource type="Script" path="res://scenes/ball.gd" id="1_bbwdf"]
+[ext_resource type="Texture2D" uid="uid://dykjmu28wvigo" path="res://img/ball.png" id="1_ujve3"]
+[ext_resource type="AudioStream" uid="uid://bphrid7yrcvxr" path="res://sfx/wall_bounce.wav" id="3_ltfyh"]
+[ext_resource type="AudioStream" uid="uid://borsh27uv7fqy" path="res://sfx/paddle_bounce.wav" id="4_18siw"]
+[ext_resource type="AudioStream" uid="uid://cfxcbuilvs5xw" path="res://sfx/score.wav" id="5_1y80y"]
+
+[node name="Ball" type="Node2D" groups=["ball"]]
+script = ExtResource("1_bbwdf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ujve3")
+
+[node name="WallBounceAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ltfyh")
+
+[node name="PaddleBounceAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_18siw")
+
+[node name="ScoreAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_1y80y")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="."]
+one_shot = true
