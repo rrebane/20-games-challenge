@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/brick.gd" id="1_2lvsg"]
 [ext_resource type="Texture2D" uid="uid://cwroqnp2tjdrl" path="res://imgs/brick.png" id="1_8chpk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4jjgx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgkl3"]
 size = Vector2(72, 18)
 
 [node name="Brick" type="StaticBody2D" groups=["brick"]]
@@ -13,4 +13,4 @@ script = ExtResource("1_2lvsg")
 texture = ExtResource("1_8chpk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_4jjgx")
+shape = SubResource("RectangleShape2D_wgkl3")

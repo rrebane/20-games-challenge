@@ -34,23 +34,26 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/PlayerScores"]
+layout_mode = 2
 size_flags_vertical = 0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="UI/PlayerScores/HBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Control" type="Control" parent="UI/PlayerScores/HBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(30, 0)
-layout_mode = 3
-anchors_preset = 0
+layout_mode = 2
 
 [node name="Label" type="Label" parent="UI/PlayerScores/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
 theme = ExtResource("3_8p0jn")
 text = "Lives"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Lives" type="Label" parent="UI/PlayerScores/HBoxContainer/HBoxContainer2"]
+layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_8p0jn")
 text = "3"
@@ -60,24 +63,25 @@ script = ExtResource("6_brr5j")
 
 [node name="Control2" type="Control" parent="UI/PlayerScores/HBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(30, 0)
-layout_mode = 3
-anchors_preset = 0
+layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/PlayerScores/HBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Control" type="Control" parent="UI/PlayerScores/HBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
-layout_mode = 3
-anchors_preset = 0
+layout_mode = 2
 
 [node name="Label" type="Label" parent="UI/PlayerScores/HBoxContainer/HBoxContainer"]
+layout_mode = 2
 theme = ExtResource("3_8p0jn")
 text = "Score"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Score" type="Label" parent="UI/PlayerScores/HBoxContainer/HBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_8p0jn")
 text = "0"
@@ -87,24 +91,25 @@ script = ExtResource("4_mrybu")
 
 [node name="Control2" type="Control" parent="UI/PlayerScores/HBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(30, 0)
-layout_mode = 3
-anchors_preset = 0
+layout_mode = 2
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="UI/PlayerScores/HBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Control" type="Control" parent="UI/PlayerScores/HBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(30, 0)
-layout_mode = 3
-anchors_preset = 0
+layout_mode = 2
 
 [node name="Label" type="Label" parent="UI/PlayerScores/HBoxContainer/HBoxContainer3"]
+layout_mode = 2
 theme = ExtResource("3_8p0jn")
 text = "Highscore"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HighScore" type="Label" parent="UI/PlayerScores/HBoxContainer/HBoxContainer3"]
+layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("3_8p0jn")
 text = "0"
@@ -114,8 +119,7 @@ script = ExtResource("8_3dbr7")
 
 [node name="Control2" type="Control" parent="UI/PlayerScores/HBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(30, 0)
-layout_mode = 3
-anchors_preset = 0
+layout_mode = 2
 
 [node name="Overlay" type="CanvasLayer" parent="."]
 
@@ -142,6 +146,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Info" type="Label" parent="Overlay/PlayerInfo"]
+layout_mode = 2
 theme = ExtResource("3_8p0jn")
 horizontal_alignment = 1
 vertical_alignment = 1

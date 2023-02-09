@@ -18,6 +18,7 @@ var _row_color = [
 
 func _ready():
 	EventManager.reset.connect(_reset)
+	EventManager.score.connect(_score)
 	
 	_reset()
 
@@ -37,3 +38,14 @@ func _reset():
 			brick.set_score(2 ** ((Constants.BRICK_ROWS - y + 1) / 2 - 1))
 			brick.set_color(_row_color[y])
 			add_child(brick)
+
+func _score(_points):
+	var has_bricks = false
+	
+	for child in get_children():
+		if child.is_in_group("brick"):
+			has_bricks = true
+			break
+			
+	if not has_bricks:
+		EventManager.game_over.emit()
