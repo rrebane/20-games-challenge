@@ -1,0 +1,7 @@
+extends Node
+
+var BRICK_ROWS = 8
+var BRICK_COLS = 16
+
+var SCREEN_HEIGHT = 720
+var SCREEN_WIDTH = 1280

@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://dt2iam768475g"]
+
+[ext_resource type="Script" path="res://scenes/ball.gd" id="1_bbwdf"]
+[ext_resource type="Texture2D" uid="uid://dykjmu28wvigo" path="res://imgs/ball.png" id="1_ujve3"]
+[ext_resource type="AudioStream" uid="uid://bphrid7yrcvxr" path="res://sfx/wall_bounce.wav" id="3_ltfyh"]
+[ext_resource type="AudioStream" uid="uid://borsh27uv7fqy" path="res://sfx/paddle_bounce.wav" id="4_18siw"]
+[ext_resource type="AudioStream" uid="uid://cfxcbuilvs5xw" path="res://sfx/lose_life.wav" id="5_2nren"]
+[ext_resource type="AudioStream" uid="uid://cg7x0f1mt1khk" path="res://sfx/brick_destroyed.wav" id="6_uuodi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6ed0"]
+
+[node name="Ball" type="RigidBody2D" groups=["ball"]]
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_bbwdf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ujve3")
+
+[node name="WallBounceAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ltfyh")
+
+[node name="PaddleBounceAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_18siw")
+
+[node name="LoseLifeAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_2nren")
+
+[node name="BrickDestroyedAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_uuodi")
+
+[node name="ServeTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="ServeHitTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_b6ed0")
