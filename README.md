@@ -8,5 +8,5 @@ Based on https://20_games_challenge.gitlab.io/.
 
 ## 2. Breakout
 
-![Breakout](img/1-breakout.gif)
+![Breakout](img/2-breakout.gif)
 
