@@ -6,3 +6,7 @@ Based on https://20_games_challenge.gitlab.io/.
 
 ![Pong](img/1-pong.gif)
 
+## 2. Breakout
+
+![Pong](img/1-breakout.gif)
+
