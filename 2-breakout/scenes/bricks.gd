@@ -1,6 +1,8 @@
 extends Node2D
 
 
+var _level = 1
+
 var _brick_template = preload("res://scenes/brick.tscn")
 var _brick_width = Constants.SCREEN_WIDTH / Constants.BRICK_COLS
 var _brick_height = 24
@@ -23,6 +25,10 @@ func _ready():
 	_reset()
 
 func _reset():
+	_level = 1
+	_level_start()
+
+func _level_start():
 	for child in get_children():
 		if child.is_in_group("brick"):
 			remove_child(child)
@@ -38,6 +44,8 @@ func _reset():
 			brick.set_score(2 ** ((Constants.BRICK_ROWS - y + 1) / 2 - 1))
 			brick.set_color(_row_color[y])
 			add_child(brick)
+	
+	EventManager.level_start.emit(_level)
 
 func _score(_points):
 	var has_bricks = false
@@ -48,4 +56,5 @@ func _score(_points):
 			break
 			
 	if not has_bricks:
-		EventManager.game_over.emit()
+		_level += 1
+		_level_start()

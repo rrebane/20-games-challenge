@@ -7,6 +7,9 @@ func _ready():
 	EventManager.lose_life.connect(_lose_life)
 	EventManager.game_over.connect(_game_over)
 	EventManager.reset.connect(_reset)
+	EventManager.level_start.connect(_level_start)
+	
+	_level_start(1)
 
 func _serve():
 	text = ""
@@ -21,3 +24,6 @@ func _game_over():
 
 func _reset():
 	_enabled = true
+
+func _level_start(level_nr):
+	text = "Stage {0}".format([level_nr])

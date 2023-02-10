@@ -22,6 +22,7 @@ func _ready():
 	
 	EventManager.game_over.connect(_game_over)
 	EventManager.reset.connect(_reset)
+	EventManager.level_start.connect(_level_start)
 	$ServeTimer.timeout.connect(_serve)
 	$ServeHitTimer.timeout.connect(_serve_hit)
 
@@ -93,16 +94,21 @@ func _physics_process(delta):
 			$BrickDestroyedAudio.play()
 
 func _lose_life():
-	_wait_for_serve = true
-	$Sprite2D.visible = false
+	_serve_after(_serve_timeout)
 	EventManager.lose_life.emit()
 	$LoseLifeAudio.play()
+	$ServeTimer.start(_serve_timeout)
+
+	
+func _serve_after(timeout):
+	_wait_for_serve = true
+	$Sprite2D.visible = false
 	$ServeTimer.start(_serve_timeout)
 
 func _choose_start_position():
 	return _start_position
 
-func _serve(start_position = _choose_start_position(), start_x_direction = randi_range(-1, 1)):
+func _serve(start_position = _choose_start_position(), start_x_direction = -1 if randf() < 0.5 else 1):
 	if not _enabled:
 		return
 
@@ -124,4 +130,7 @@ func _reset():
 	$ServeHitTimer.stop()
 	_enabled = true
 	_wait_for_serve = true
-	_serve(_start_position, -1 if randf() < 0.5 else 1)
+
+func _level_start(_level_nr):
+	_reset()
+	_serve_after(_serve_timeout)
